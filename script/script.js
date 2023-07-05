@@ -4,7 +4,8 @@ createApp({
     data() {
         return {
             apiUrl: './server.php',
-            discsList: []
+            discsList: [],
+            infoBox: false,
         }
     },
 
@@ -25,7 +26,17 @@ createApp({
                     // always executed
                 });
 
-        }
+        },
+
+        turnOn(element) {
+            element = true
+            console.log(element);
+        },
+
+        turnOff(element) {
+            element = false
+            console.log(element);
+        },
     },
 
     created() {

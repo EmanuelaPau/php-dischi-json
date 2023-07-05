@@ -31,19 +31,33 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
 <body>
 
     <div id="app">
-        <header class="my-header ">
+
+        <div class="info-disc p-4">
+            <div class="d-flex w-100 justify-content-end">
+                <button>
+                    x
+                </button>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
+                <img src="" alt="">
+                <h1 class="title">Titolo</h1>
+                <p>Autore</p>
+                <h2 class="year">Anno</h2>
+            </div>
+        </div>
+
+        <header class="my-header">
             <div class="header-container d-flex align-items-center">
                 <img class="logo " src="./img/spotify_logo.webp" alt="">
             </div>
         </header>
         <div class="container my_container px-4">
             <div class="row gx-5 d-flex">
-                <div v-for=" disc in discsList" class="col-3 my-card m-3">
+                <div v-for=" (disc,index) in discsList" class="col-3 my-card m-3" @click="turnOn(infoBox)">
                     <img class="img-disc" :src="disc.poster" :alt="disc.title + 'poster'">
                     <h1 class="title">{{disc.title}}</h1>
                     <p>{{disc.author}}</p>
                     <h2 class="year">{{disc.year}}</h2>
-
                 </div>
             </div>
         </div>
