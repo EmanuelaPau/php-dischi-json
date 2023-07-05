@@ -1,0 +1,26 @@
+body {
+    background-color: #1d2d3c;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    /* background-color: red; */
+}
+
+.my-header {
+    background-color: #06131f;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img.logo {
+    height: 70px;
+    padding: 10px;
+}

@@ -25,13 +25,18 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
     <!-- Axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
     <!-- CSS style -->
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
 
     <div id="app">
-        <div class="container">
+        <header class="my-header ">
+            <div class="header-container d-flex align-items-center">
+                <img class="logo " src="./img/spotify_logo.webp" alt="">
+            </div>
+        </header>
+        <div class="">
             <div class="row">
                 <div v-for="disc in discsList" class="col-4">
                     <img class="w-100" :src="disc.poster" :alt="disc.title + 'poster'">
