@@ -2,7 +2,7 @@
 
 $rawData = file_get_contents('./database/dischi.json');
 
-$dischi = json_encode($rawData);
+// $dischi = json_encode($rawData);
 
 header('Content-Type: application/json');
 
