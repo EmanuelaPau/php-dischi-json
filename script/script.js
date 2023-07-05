@@ -6,6 +6,7 @@ createApp({
             apiUrl: './server.php',
             discsList: [],
             infoBox: false,
+            discIndex: '',
         }
     },
 
@@ -28,9 +29,12 @@ createApp({
 
         },
 
-        turnOn(element) {
+        turnOn(element, index, imgIndex) {
             element = true
             console.log(element);
+            index = imgIndex;
+            console.log(index)
+            // console.log(this.infoBox)
         },
 
         turnOff(element) {

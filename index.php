@@ -32,15 +32,15 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
 
     <div id="app">
 
-        <div class="info-disc p-4">
+        <div class="info-disc p-4" :class="infoBox == true ? '' : 'd-none' ">
             <div class="d-flex w-100 justify-content-end">
-                <button>
+                <button @click='turnOff(infoBox)'>
                     x
                 </button>
             </div>
             <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
                 <img src="" alt="">
-                <h1 class="title">Titolo</h1>
+                <h1 class="title"></h1>
                 <p>Autore</p>
                 <h2 class="year">Anno</h2>
             </div>
@@ -53,7 +53,7 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
         </header>
         <div class="container my_container px-4">
             <div class="row gx-5 d-flex">
-                <div v-for=" (disc,index) in discsList" class="col-3 my-card m-3" @click="turnOn(infoBox)">
+                <div v-for=" (disc,index) in discsList" class="col-3 my-card m-3" @click="turnOn(infoBox, discIndex, index)">
                     <img class="img-disc" :src="disc.poster" :alt="disc.title + 'poster'">
                     <h1 class="title">{{disc.title}}</h1>
                     <p>{{disc.author}}</p>
