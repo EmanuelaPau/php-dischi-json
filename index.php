@@ -33,17 +33,12 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
     <div id="app">
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <p>
-                    <ul>
-                        <li>
-                            ciao
-                        </li>
-                        <li v-for="element in discsList">
-                            ciao
-                        </li>
-                    </ul>
-                    </p>
+                <div v-for="disc in discsList" class="col-4">
+                    <img class="w-100" :src="disc.poster" :alt="disc.title + 'poster'">
+                    <h1>{{disc.title}}</h1>
+                    <p>{{disc.author}}</p>
+                    <h1>{{disc.year}}</h1>
+
                 </div>
             </div>
         </div>
