@@ -34,7 +34,16 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
         <div class="container">
             <div class="row">
                 <div class="col">
-
+                    <p>
+                    <ul>
+                        <li>
+                            ciao
+                        </li>
+                        <li v-for="element in discsList">
+                            ciao
+                        </li>
+                    </ul>
+                    </p>
                 </div>
             </div>
         </div>

@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            apiUrl: './server.php'
+            apiUrl: './server.php',
+            discsList: []
         }
     },
 
@@ -12,8 +13,10 @@ createApp({
             axios.get(this.apiUrl, {
                 params: {}
             })
-                .then(function (response) {
+                .then((response) => {
                     console.log(response);
+                    this.discsList = response.data;
+                    console.log(this.discsList)
                 })
                 .catch(function (error) {
                     console.log(error);
