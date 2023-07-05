@@ -3,7 +3,17 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            message: 'Hello Vue!'
+            apiUrl: './server.php'
         }
-    }
+    },
+
+    methods: {
+        getItems() {
+
+        }
+    },
+
+    created() {
+
+    },
 }).mount('#app')
