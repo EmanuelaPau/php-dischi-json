@@ -36,13 +36,13 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
                 <img class="logo " src="./img/spotify_logo.webp" alt="">
             </div>
         </header>
-        <div class="">
-            <div class="row">
-                <div v-for="disc in discsList" class="col-4">
-                    <img class="w-100" :src="disc.poster" :alt="disc.title + 'poster'">
-                    <h1>{{disc.title}}</h1>
+        <div class="container my_container px-4">
+            <div class="row gx-5 d-flex">
+                <div v-for=" disc in discsList" class="col-3 my-card m-3">
+                    <img class="img-disc" :src="disc.poster" :alt="disc.title + 'poster'">
+                    <h1 class="title">{{disc.title}}</h1>
                     <p>{{disc.author}}</p>
-                    <h1>{{disc.year}}</h1>
+                    <h2 class="year">{{disc.year}}</h2>
 
                 </div>
             </div>
