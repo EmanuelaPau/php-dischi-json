@@ -24,6 +24,10 @@ session_start();
     <?php
     // Set session variables
     $_SESSION["sessionCounter"] += 1;
+
+    if (isset($_GET['searchbar'])) {
+        $keyword = $_GET['searchbar'];
+    };
     ?>
     <div id="app">
         <!-- 
@@ -42,7 +46,7 @@ session_start();
         </div> -->
 
         <header class="my-header">
-            <div class="header-container d-flex align-items-center">
+            <div class="header-container d-flex align-items-center justify-content-between">
                 <img class="logo me-5" src="./img/spotify_logo.webp" alt="">
                 <h2 class="mb-0">Session counter
                     <?php
@@ -51,13 +55,16 @@ session_start();
                     }
                     ?>
                 </h2>
+                <form class="form-inline my-2 my-lg-0 d-flex " method="get">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchbar">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </header>
 
         <div class="container my_container px-4">
             <div class="row gx-5 d-flex">
                 <div v-for=" (disc , index) in discsList" class="col-3 my-card m-3" @click="turnOn(infoBox, discIndex, index)">
-
                     <img class="img-disc" :src="disc.poster" :alt="disc.title + 'poster'">
                     <h1 class="title">{{disc.title}}</h1>
                     <p>{{disc.author}}</p>
