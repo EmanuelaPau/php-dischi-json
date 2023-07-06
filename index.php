@@ -28,6 +28,7 @@ session_start();
     if (isset($_GET['searchbar'])) {
         $keyword = $_GET['searchbar'];
     };
+
     ?>
     <div id="app">
         <!-- 
