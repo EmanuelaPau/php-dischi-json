@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +21,18 @@
 </head>
 
 <body>
+    <?php
+    // Set session variables
+    $_SESSION["sessionCounter"] += 1;
+    ?>
 
+    <div>
+        <h1>Session counter <?php
+                            if (isset($_SESSION['sessionCounter'])) {
+                                echo $_SESSION["sessionCounter"] + 1;
+                            } ?>
+        </h1>
+    </div>
     <div id="app">
         <!-- 
         <div class="info-disc p-4" :class="infoDiscStatus">
