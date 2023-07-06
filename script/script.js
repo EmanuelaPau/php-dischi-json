@@ -7,6 +7,7 @@ createApp({
             discsList: [],
             infoBox: false,
             discIndex: '',
+            infoDiscStatus: 'd-none',
         }
     },
 

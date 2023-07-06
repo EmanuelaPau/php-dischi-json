@@ -1,16 +1,3 @@
-<!-- Descrizione
-Dobbiamo creare una web-app che permetta di leggere una lista di dischi presente nel nostro server.
-Stack
-Html, CSS, VueJS (importato tramite CDN), axios, PHP
-Consigli
-Nello svolgere l’esercizio seguite un approccio graduale.
-Prima assicuratevi che la vostra pagina index.php (il vostro front-end) riesca a comunicare correttamente con il vostro script PHP (le vostre “API”).
-Solo a questo punto sarà utile passare alla lettura della lista da un file JSON.
-Bonus
-Al click su un disco, recuperare e mostrare i dati del disco selezionato.
-3 file -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,10 +18,10 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
 <body>
 
     <div id="app">
-
-        <div class="info-disc p-4" :class="infoBox == true ? '' : 'd-none' ">
+        <!-- 
+        <div class="info-disc p-4" :class="infoDiscStatus">
             <div class="d-flex w-100 justify-content-end">
-                <button @click='turnOff(infoBox)'>
+                <button @click='infoDiscStatus = "d-none"'>
                     x
                 </button>
             </div>
@@ -44,16 +31,18 @@ Al click su un disco, recuperare e mostrare i dati del disco selezionato.
                 <p>Autore</p>
                 <h2 class="year">Anno</h2>
             </div>
-        </div>
+        </div> -->
 
         <header class="my-header">
             <div class="header-container d-flex align-items-center">
                 <img class="logo " src="./img/spotify_logo.webp" alt="">
             </div>
         </header>
+
         <div class="container my_container px-4">
             <div class="row gx-5 d-flex">
-                <div v-for=" (disc,index) in discsList" class="col-3 my-card m-3" @click="turnOn(infoBox, discIndex, index)">
+                <div v-for=" (disc , index) in discsList" class="col-3 my-card m-3" @click="turnOn(infoBox, discIndex, index)">
+
                     <img class="img-disc" :src="disc.poster" :alt="disc.title + 'poster'">
                     <h1 class="title">{{disc.title}}</h1>
                     <p>{{disc.author}}</p>
