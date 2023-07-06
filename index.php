@@ -25,14 +25,6 @@ session_start();
     // Set session variables
     $_SESSION["sessionCounter"] += 1;
     ?>
-
-    <div>
-        <h1>Session counter <?php
-                            if (isset($_SESSION['sessionCounter'])) {
-                                echo $_SESSION["sessionCounter"] + 1;
-                            } ?>
-        </h1>
-    </div>
     <div id="app">
         <!-- 
         <div class="info-disc p-4" :class="infoDiscStatus">
@@ -51,7 +43,14 @@ session_start();
 
         <header class="my-header">
             <div class="header-container d-flex align-items-center">
-                <img class="logo " src="./img/spotify_logo.webp" alt="">
+                <img class="logo me-5" src="./img/spotify_logo.webp" alt="">
+                <h2 class="mb-0">Session counter
+                    <?php
+                    if (isset($_SESSION['sessionCounter'])) {
+                        echo $_SESSION["sessionCounter"] + 1;
+                    }
+                    ?>
+                </h2>
             </div>
         </header>
 
