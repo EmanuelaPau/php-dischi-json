@@ -14,7 +14,9 @@ createApp({
     methods: {
         getItems() {
             axios.get(this.apiUrl, {
-                params: {}
+                params: {
+                    searchbar: '',
+                }
             })
                 .then((response) => {
                     console.log(response);
@@ -27,7 +29,6 @@ createApp({
                 .finally(function () {
                     // always executed
                 });
-
         },
 
         turnOn(element, index, imgIndex) {

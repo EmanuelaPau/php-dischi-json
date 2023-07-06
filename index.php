@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/var.php';
 // Start the session
 session_start();
 ?>
